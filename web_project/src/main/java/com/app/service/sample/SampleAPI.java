@@ -1,5 +1,6 @@
 package com.app.service.sample;
 
+import com.app.persistence.model.UserModel;
 import com.app.proxy.ProxyFactory;
 import com.app.rest.errorhandling.AppException;
 
@@ -16,5 +17,9 @@ public class SampleAPI
 	public static void call(String foo, String bar) throws AppException
 	{
 		getSampleServiceInstance().call(foo, bar);
+	}
+
+	public static void addUser(UserModel um) throws AppException {
+		getSampleServiceInstance().addUser(um);
 	}
 }

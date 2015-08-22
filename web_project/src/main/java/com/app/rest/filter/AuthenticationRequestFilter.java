@@ -21,7 +21,8 @@ public class AuthenticationRequestFilter implements ContainerRequestFilter
 {
 	private static String[] SKIP_AUTH_FOR = {
 		"users/login",
-		"users/signup"
+		"users/signup",
+			"sample/"
 	};
 
 	private static boolean isSkipAuth(String uri)

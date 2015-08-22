@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.app.persistence.model" >
+    <class name="UserModel" table="user_table" select-before-update="true" dynamic-update="true" dynamic-insert="true">
+        <id name="userId" column="user_id">
+            <generator class="native" />
+        </id>
+        <property name="mobile" />
+        <property name="email" />
+        <property name="password" />
+        <property name="gender" />
+        <property name="firstName" column="fname" />
+        <property name="lastName" column="lname" />
+
+    </class>
+
+    <class name="LocationModel" table="locations_table" select-before-update="true" dynamic-update="true" dynamic-insert="true">
+        <id name="LocationID" column="loc_id">
+            <generator class="native"/>
+        </id>
+        <property name="locZone" />
+        <property name="locLat" />
+        <property name="locLong" />
+    </class>
+
+    <class name="KitchenModel" table="kitchens_table" select-before-update="true" dynamic-update="true" dynamic-insert="true">
+        <id name="KitchenID" column="kit_id">
+            <generator class="native"/>
+        </id>
+        <property name="Name" />
+        <property name="LocatonID" />
+        <property name="opTimeID" />
+        <property name="menuID" />
+    </class>
+
+    <class name="OpTimeModel" table="optimes_table" select-before-update="true" dynamic-update="true" dynamic-insert="true">
+        <id name="OpTimeID" column="opt_id">
+            <generator class="native"/>
+        </id>
+        <property name="fromTime" />
+        <property name="toTime" />
+        <property name="KitchenID" />
+    </class>
+
+    <class name="MenuModel" table="menus_table" select-before-update="true" dynamic-update="true" dynamic-insert="true">
+        <id name="MenuID" column="menu_id">
+            <generator class="native"/>
+        </id>
+        <property name="Data" />
+    </class>
+
+</hibernate-mapping>

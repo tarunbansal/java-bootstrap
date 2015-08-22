@@ -14,6 +14,14 @@ idea {
     module {
         scopes.PROVIDED.plus += [configurations.provided]
     }
+
+
+}
+
+idea.module.iml {
+    whenMerged { module ->
+        module.dependencies*.exported = true
+    }
 }
 
 repositories {
